@@ -715,7 +715,7 @@ html[lang="en"] body{font-family:"Noto Sans JP",sans-serif;}
     <div class="hero-glow"></div><div class="hero-glow2"></div>
     <div class="badge"><span class="bdot"></span><span data-i18n="hero_badge">AI-POWERED MARKETPLACE</span></div>
     <h1><span class="h1a" data-i18n="hero_h1a">WELCOME TO</span><span class="h1b">AI PARADISE</span></h1>
-    <p class="hero-sub" id="heroSub" data-i18n="hero_sub">AIツール・スクリプト・プロンプト・自動化フローの専門マーケット。<br>あなたのAIツールを販売しよう。</p>
+    <p class="hero-sub" id="heroSub" data-i18n="hero_sub">AIツール・スクリプト・プロンプト・自動化フローの専門マーケット。<br>あなたのAIツールを今すぐ販売しよう。</p>
     <div class="hero-btns">
       <button class="btn-p" onclick="SP('market')" data-i18n="hero_btn_market">作品を探す</button>
       <button class="btn-g" onclick="SP('sell')" data-i18n="hero_btn_sell">出品する</button>
@@ -729,13 +729,13 @@ html[lang="en"] body{font-family:"Noto Sans JP",sans-serif;}
 
   <div class="wrap">
     <section class="sec">
-      <span class="stag">// BROWSE BY CATEGORY</span>
+      <span class="stag">// BROWSE BY TYPE</span>
       <div class="sh" data-i18n="home_cats_title">カテゴリから<span data-i18n="home_cats_span">探す</span></div>
       <div class="cat-grid" id="homeCats"></div>
     </section>
     <section class="sec" style="padding-top:0">
       <span class="stag">// FEATURED WORKS</span>
-      <div class="sh" data-i18n="home_feat_title">注目の<span data-i18n="home_feat_span">AIツール</span></div>
+      <div class="sh" data-i18n="home_feat_title">注目の<span data-i18n="home_feat_span">AI作品</span></div>
       <div class="pgrid" id="homeFeat"></div>
     </section>
     <!-- ══ PERSONALISED RECS ══ -->
@@ -769,7 +769,7 @@ html[lang="en"] body{font-family:"Noto Sans JP",sans-serif;}
   <div class="wrap">
     <section class="sec">
       <span class="stag">// MARKET</span>
-      <div class="sh" data-i18n="market_title">AIツール<span data-i18n="market_span">マーケット</span></div>
+      <div class="sh" data-i18n="market_title">AI作品<span data-i18n="market_span">マーケット</span></div>
       <div class="search-row">
         <input class="si" id="srch" type="text" placeholder="作品・クリエイターを検索..." oninput="filterP()">
         <select class="sfs" id="catF" onchange="filterP()">
@@ -1194,42 +1194,35 @@ html[lang="en"] body{font-family:"Noto Sans JP",sans-serif;}
 
 <script>
 const CATS=[
-  {id:"video",  icon:"🎬",bg:"linear-gradient(135deg,#0d0d2b,#1a0a2e,#0f3460)",name:{ja:"動画",en:"Video",zh:"视频",ko:"영상"}},
-  {id:"music",  icon:"🎵",bg:"linear-gradient(135deg,#1a0a0a,#2d1b2e,#1a0a2e)",name:{ja:"音楽",en:"Music",zh:"音乐",ko:"음악"}},
-  {id:"photo",  icon:"🖼️",bg:"linear-gradient(135deg,#001a0d,#004d2e,#001a0d)",name:{ja:"写真・画像",en:"Photo",zh:"照片",ko:"사진"}},
-  {id:"illust", icon:"🎨",bg:"linear-gradient(135deg,#0d1b2a,#1b4332,#081c15)",name:{ja:"イラスト",en:"Illust",zh:"插画",ko:"일러스트"}},
-  {id:"game",   icon:"🎮",bg:"linear-gradient(135deg,#100020,#300060,#100020)",name:{ja:"ゲーム",en:"Game",zh:"游戏",ko:"게임"}},
-  {id:"anime",  icon:"🌸",bg:"linear-gradient(135deg,#1a0010,#4d0030,#1a0010)",name:{ja:"アニメ",en:"Anime",zh:"动漫",ko:"애니"}},
-  {id:"novel",  icon:"📚",bg:"linear-gradient(135deg,#001020,#002040,#001020)",name:{ja:"小説",en:"Novel",zh:"小说",ko:"소설"}},
-  {id:"tool",   icon:"🔧",bg:"linear-gradient(135deg,#001a1a,#004d4d,#001a1a)",name:{ja:"ツール",en:"Tool",zh:"工具",ko:"툴"}},
-  {id:"voice",  icon:"🎙️",bg:"linear-gradient(135deg,#0a0020,#1a0050,#0a002a)",name:{ja:"AI音声",en:"AI Voice",zh:"AI语音",ko:"AI음성"}},
-  {id:"avatar", icon:"🤖",bg:"linear-gradient(135deg,#001828,#003856,#001828)",name:{ja:"AIアバター",en:"AI Avatar",zh:"AI虚拟人",ko:"AI아바타"}},
-  {id:"code",   icon:"💻",bg:"linear-gradient(135deg,#001a0a,#00401a,#001a0a)",name:{ja:"コード生成",en:"Code Gen",zh:"代码生成",ko:"코드생성"}},
-  {id:"design", icon:"✏️",bg:"linear-gradient(135deg,#1a1000,#3a2800,#1a1000)",name:{ja:"デザイン",en:"Design",zh:"设计",ko:"디자인"}},
-  {id:"writing",icon:"📝",bg:"linear-gradient(135deg,#0a0a20,#20204a,#0a0a20)",name:{ja:"ライティング",en:"Writing",zh:"写作",ko:"라이팅"}},
-  {id:"art",    icon:"🖌️",bg:"linear-gradient(135deg,#200020,#500050,#200020)",name:{ja:"アート",en:"Art",zh:"艺术",ko:"아트"}},
-  {id:"edu",    icon:"🎓",bg:"linear-gradient(135deg,#0a1500,#1a3300,#0a1500)",name:{ja:"AI学習",en:"AI Learning",zh:"AI学习",ko:"AI학습"}},
+  {id:"tool",     icon:"🔧",bg:"linear-gradient(135deg,#001a1a,#004d4d,#001a1a)",  name:{ja:"スクリプト",en:"Scripts",zh:"脚本",ko:"스크립트"}},
+  {id:"prompt",   icon:"",  bg:"linear-gradient(135deg,#0a0020,#2a0060,#0a0020)",  name:{ja:"プロンプト",en:"Prompts",zh:"提示词",ko:"프롬프트"}},
+  {id:"code",     icon:"",  bg:"linear-gradient(135deg,#001a0a,#00401a,#001a0a)",  name:{ja:"コード",en:"Code",zh:"代码",ko:"코드"}},
+  {id:"workflow", icon:"",  bg:"linear-gradient(135deg,#1a1000,#4d3000,#1a1000)",  name:{ja:"ワークフロー",en:"Workflow",zh:"工作流",ko:"워크플로우"}},
+  {id:"bot",      icon:"",  bg:"linear-gradient(135deg,#001828,#004060,#001828)",  name:{ja:"AIボット",en:"AI Bots",zh:"AI机器人",ko:"AI봇"}},
+  {id:"template", icon:"",  bg:"linear-gradient(135deg,#0a0a20,#202060,#0a0a20)",  name:{ja:"テンプレート",en:"Templates",zh:"模板",ko:"템플릿"}},
+  {id:"api",      icon:"",  bg:"linear-gradient(135deg,#1a0010,#4d0030,#1a0010)",  name:{ja:"API連携",en:"API Tools",zh:"API工具",ko:"API툴"}},
+  {id:"auto",     icon:"",  bg:"linear-gradient(135deg,#0d0d2b,#1a0a2e,#0f3460)",  name:{ja:"自動化",en:"Automation",zh:"自动化",ko:"자동화"}},
 ];
 const COLORS=["linear-gradient(135deg,#0d0d2b,#1a0a2e,#0f3460)","linear-gradient(135deg,#1a0a0a,#2d1b2e,#1a0a2e)","linear-gradient(135deg,#0d1b2a,#1b4332,#081c15)","linear-gradient(135deg,#1a1500,#4d3d00,#1a1500)","linear-gradient(135deg,#100020,#300060,#100020)","linear-gradient(135deg,#001a1a,#004d4d,#001a1a)","linear-gradient(135deg,#001122,#003355,#005577)","linear-gradient(135deg,#1a0010,#4d0030,#1a0010)"];
 const EMOJIS=["🎬","🎵","🖼️","🎨","🎮","🌸","📚","🔧","🌌","🎹","🤖","🌃","🐉","✨","🌙","🎭"];
 const SAMPLES=[
-  {id:1, title:"AI議事録Generator v2",    cat:"tool",     emoji:"🔧",price:0,     desc:"会議録音をアップするだけで構造化議事録を自動生成。Pythonスクリプト。",          author:"@toolsmith_ai",  ai:"Whisper+GPT",   likes:91, bg:"linear-gradient(135deg,#001122,#003355,#005577)"},
-  {id:2, title:"ChatGPT プロンプト集 Pro", cat:"prompt",   emoji:"✨",price:1980,  desc:"GPT-4o対応・業種別プロンプト500本。コピペで即使える実践プロンプト集。",        author:"@prompt_master", ai:"GPT-4o",         likes:143,bg:"linear-gradient(135deg,#0a0020,#2a0060,#0a0020)"},
-  {id:3, title:"Web App Starter Kit",      cat:"code",     emoji:"💻",price:4200,  desc:"GitHub Copilot生成・React+TypeScript完全動作Webアプリテンプレート。",           author:"@codegen_pro",   ai:"Copilot",        likes:67, bg:"linear-gradient(135deg,#001a0a,#00401a,#001a0a)"},
-  {id:4, title:"n8n 自動化ワークフロー集", cat:"workflow",  emoji:"⚡",price:3800,  desc:"n8n対応・SNS投稿・メール返信・請求書作成など業務自動化ワークフロー20本。",      author:"@n8n_wizard",    ai:"GPT-4o",         likes:88, bg:"linear-gradient(135deg,#1a1000,#4d3000,#1a1000)"},
-  {id:5, title:"AI カスタマーサポートBot", cat:"bot",       emoji:"🤖",price:9800,  desc:"Voiceflow構築・FAQ対応・注文確認・クレーム一次対応まで自動化するチャットボット。",author:"@bot_factory",   ai:"Claude+GPT",     likes:112,bg:"linear-gradient(135deg,#001828,#004060,#001828)"},
-  {id:6, title:"SNS投稿テンプレ100本",     cat:"template",  emoji:"📋",price:1500,  desc:"X・Instagram・LinkedIn対応。業種別SNS投稿テンプレート100本。Claude生成。",      author:"@social_ai",     ai:"Claude",         likes:76, bg:"linear-gradient(135deg,#0a0a20,#202060,#0a0a20)"},
-  {id:7, title:"Zapier × OpenAI 連携Kit", cat:"api",       emoji:"🔌",price:5800,  desc:"Zapierで使えるOpenAI API連携テンプレート。メール要約・翻訳・分類を自動化。",   author:"@zap_master",    ai:"GPT-4o",         likes:54, bg:"linear-gradient(135deg,#1a0010,#4d0030,#1a0010)"},
-  {id:8, title:"Midjourney 呪文ジェネレーター",cat:"prompt",emoji:"✨",price:2800,  desc:"テーマ・スタイル・雰囲気を入力するだけで最適Midjourneyプロンプトを生成するPythonツール。",author:"@mj_prompter",ai:"GPT-4o",    likes:189,bg:"linear-gradient(135deg,#200020,#500050,#200020)"},
-  {id:9, title:"Python データ分析スクリプト集",cat:"code",  emoji:"💻",price:3200,  desc:"pandas・matplotlib・seaborn使用・CSV/Excel読み込みから可視化まで30本収録。",   author:"@data_wizard",   ai:"Copilot+GPT",    likes:98, bg:"linear-gradient(135deg,#001a0a,#003322,#001a0a)"},
-  {id:10,title:"Make.com 業務自動化フロー", cat:"workflow", emoji:"⚡",price:4800,  desc:"Make.com（旧Integromat）シナリオファイル。Google Sheets→Notion→Slack連携。",   author:"@make_pro",      ai:"GPT-4o",         likes:61, bg:"linear-gradient(135deg,#1a1a00,#3a3000,#1a1a00)"},
-  {id:11,title:"AI営業メールテンプレ50本",  cat:"template", emoji:"📋",price:1980,  desc:"業種・フェーズ別営業メールテンプレート50本。返信率アップのA/Bパターン付き。",   author:"@sales_ai",      ai:"Claude",         likes:83, bg:"linear-gradient(135deg,#0a0a20,#1a1a50,#0a0a20)"},
-  {id:12,title:"LINE Bot 構築テンプレ",    cat:"bot",       emoji:"🤖",price:6800,  desc:"LINE Messaging API + GPT連携。FAQ・予約・注文確認ボット即日構築可能なテンプレ。",author:"@line_builder",  ai:"GPT-4o",         likes:127,bg:"linear-gradient(135deg,#001828,#003060,#001828)"},
-  {id:13,title:"Claude API 活用スクリプト",cat:"api",       emoji:"🔌",price:3500,  desc:"Claude APIを使った文書要約・翻訳・分類・構造化抽出スクリプト集（Python）。",   author:"@claude_dev",    ai:"Claude",         likes:71, bg:"linear-gradient(135deg,#1a0010,#3d0025,#1a0010)"},
-  {id:14,title:"完全自動ブログ投稿ツール",  cat:"auto",     emoji:"🚀",price:7800,  desc:"キーワード入力→記事生成→WordPress自動投稿まで全自動。n8n+GPT+WP REST API。",  author:"@blog_robot",    ai:"GPT-4o",         likes:156,bg:"linear-gradient(135deg,#0d0d2b,#1a0a2e,#0f3460)"},
-  {id:15,title:"AI画像生成プロンプト辞典",  cat:"prompt",   emoji:"✨",price:2480,  desc:"DALL-E・SD・Midjourney対応。スタイル別・ジャンル別プロンプト辞典1000エントリ。",author:"@img_prompter",  ai:"GPT-4o",         likes:201,bg:"linear-gradient(135deg,#0a0020,#1a0050,#0a0020)"},
-  {id:16,title:"TypeScript型定義 自動生成", cat:"code",     emoji:"💻",price:2800,  desc:"JSON/APIレスポンスからTypeScript型定義を自動生成するNode.jsスクリプト。",     author:"@ts_wizard",     ai:"Copilot",        likes:44, bg:"linear-gradient(135deg,#001a0a,#002a10,#001a0a)"},
-  {id:17,title:"月次レポート自動化ツール",  cat:"auto",     emoji:"🚀",price:5200,  desc:"Google Analytics + Sheets + Slides連携。月次レポートをワンクリック自動生成。", author:"@report_auto",   ai:"GPT-4o",         likes:93, bg:"linear-gradient(135deg,#0d0d2b,#2a1a4e,#0d0d2b)"},
+  {id:1, title:"AI議事録Generator v2",     cat:"tool",    emoji:"🔧",price:0,    desc:"会議録音をアップするだけで構造化議事録を自動生成。Pythonスクリプト。",               author:"@toolsmith_ai", ai:"Whisper+GPT",  likes:91, bg:"linear-gradient(135deg,#001122,#003355,#005577)"},
+  {id:2, title:"ChatGPT プロンプト集 Pro",  cat:"prompt",  emoji:"✨",price:1980, desc:"GPT-4o対応・業種別プロンプト500本。コピペで即使える実践プロンプト集。",             author:"@prompt_master",ai:"GPT-4o",        likes:143,bg:"linear-gradient(135deg,#0a0020,#2a0060,#0a0020)"},
+  {id:3, title:"Web App Starter Kit",       cat:"code",    emoji:"💻",price:4200, desc:"GitHub Copilot生成・React+TypeScript完全動作Webアプリテンプレート。",              author:"@codegen_pro",  ai:"Copilot",      likes:67, bg:"linear-gradient(135deg,#001a0a,#00401a,#001a0a)"},
+  {id:4, title:"n8n 自動化ワークフロー集",  cat:"workflow", emoji:"⚡",price:3800, desc:"n8n対応・SNS投稿・メール返信・請求書作成など業務自動化ワークフロー20本。",         author:"@n8n_wizard",   ai:"GPT-4o",       likes:88, bg:"linear-gradient(135deg,#1a1000,#4d3000,#1a1000)"},
+  {id:5, title:"AI カスタマーサポートBot",  cat:"bot",      emoji:"🤖",price:9800, desc:"Voiceflow構築・FAQ対応・注文確認・クレーム一次対応まで自動化するチャットボット。", author:"@bot_factory",  ai:"Claude+GPT",   likes:112,bg:"linear-gradient(135deg,#001828,#004060,#001828)"},
+  {id:6, title:"SNS投稿テンプレ100本",      cat:"template", emoji:"📋",price:1500, desc:"X・Instagram・LinkedIn対応。業種別SNS投稿テンプレート100本。Claude生成。",         author:"@social_ai",    ai:"Claude",       likes:76, bg:"linear-gradient(135deg,#0a0a20,#202060,#0a0a20)"},
+  {id:7, title:"Zapier × OpenAI 連携Kit",  cat:"api",      emoji:"🔌",price:5800, desc:"Zapierで使えるOpenAI API連携テンプレート。メール要約・翻訳・分類を自動化。",      author:"@zap_master",   ai:"GPT-4o",       likes:54, bg:"linear-gradient(135deg,#1a0010,#4d0030,#1a0010)"},
+  {id:8, title:"Midjourney プロンプト辞典", cat:"prompt",   emoji:"✨",price:2800, desc:"テーマ・スタイル・雰囲気を入力するだけで最適プロンプトを自動生成するPythonツール。",author:"@mj_prompter",  ai:"GPT-4o",       likes:189,bg:"linear-gradient(135deg,#200020,#500050,#200020)"},
+  {id:9, title:"Python データ分析スクリプト",cat:"code",    emoji:"💻",price:3200, desc:"pandas・matplotlib・seaborn使用・CSV/Excel読み込みから可視化まで30本収録。",    author:"@data_wizard",  ai:"Copilot+GPT",  likes:98, bg:"linear-gradient(135deg,#001a0a,#003322,#001a0a)"},
+  {id:10,title:"Make.com 業務自動化フロー", cat:"workflow", emoji:"⚡",price:4800, desc:"Make.comシナリオファイル。Google Sheets→Notion→Slack連携20フロー。",             author:"@make_pro",     ai:"GPT-4o",       likes:61, bg:"linear-gradient(135deg,#1a1a00,#3a3000,#1a1a00)"},
+  {id:11,title:"AI営業メールテンプレ50本", cat:"template",  emoji:"📋",price:1980, desc:"業種・フェーズ別営業メールテンプレート50本。返信率アップのA/Bパターン付き。",     author:"@sales_ai",     ai:"Claude",       likes:83, bg:"linear-gradient(135deg,#0a0a20,#1a1a50,#0a0a20)"},
+  {id:12,title:"LINE Bot 構築テンプレ",     cat:"bot",      emoji:"🤖",price:6800, desc:"LINE Messaging API + GPT連携。FAQ・予約・注文確認ボット即日構築可能なテンプレ。",author:"@line_builder",  ai:"GPT-4o",       likes:127,bg:"linear-gradient(135deg,#001828,#003060,#001828)"},
+  {id:13,title:"Claude API 活用スクリプト",cat:"api",       emoji:"🔌",price:3500, desc:"Claude APIを使った文書要約・翻訳・分類・構造化抽出スクリプト集（Python）。",    author:"@claude_dev",   ai:"Claude",       likes:71, bg:"linear-gradient(135deg,#1a0010,#3d0025,#1a0010)"},
+  {id:14,title:"完全自動ブログ投稿ツール",  cat:"auto",     emoji:"🚀",price:7800, desc:"キーワード入力→記事生成→WordPress自動投稿まで全自動。n8n+GPT+WP REST API。",   author:"@blog_robot",   ai:"GPT-4o",       likes:156,bg:"linear-gradient(135deg,#0d0d2b,#1a0a2e,#0f3460)"},
+  {id:15,title:"AI画像生成プロンプト辞典",  cat:"prompt",   emoji:"✨",price:2480, desc:"DALL-E・SD・Midjourney対応。スタイル別プロンプト辞典1000エントリ。",             author:"@img_prompter",  ai:"GPT-4o",       likes:201,bg:"linear-gradient(135deg,#0a0020,#1a0050,#0a0020)"},
+  {id:16,title:"TypeScript型定義 自動生成",cat:"code",      emoji:"💻",price:2800, desc:"JSON/APIレスポンスからTypeScript型定義を自動生成するNode.jsスクリプト。",      author:"@ts_wizard",     ai:"Copilot",      likes:44, bg:"linear-gradient(135deg,#001a0a,#002a10,#001a0a)"},
+  {id:17,title:"月次レポート自動化ツール",  cat:"auto",     emoji:"🚀",price:5200, desc:"Google Analytics+Sheets+Slides連携。月次レポートをワンクリック自動生成。",       author:"@report_auto",   ai:"GPT-4o",       likes:93, bg:"linear-gradient(135deg,#0d0d2b,#2a1a4e,#0d0d2b)"},
 ];
 
 // ── STATE ──
@@ -1327,8 +1320,8 @@ function renderHome(){
   document.getElementById("stepsEl").innerHTML=[0,1,2,3].map(i=>`<div class="step"><div class="stn">0${i+1}</div><div class="stt">${T[i][lang]||T[i].ja}</div><div class="std">${D[i][lang]||D[i].ja}</div></div>`).join("");
   const RULES={
     ok:{
-      ja:{h:"✅ 出品OK",items:["AIで作成したスクリプト・ツール・プロンプト","AIで書いたオリジナル小説・脚本","AI生成素材を使ったゲーム・アプリ","AIプロンプト集・生成ガイド","AIで作ったフォント・デザイン素材","AI活用ツール・スクリプト・コード"]},
-      en:{h:"✅ Allowed",items:["AI-created scripts, tools, prompts","Original AI-written novels, scripts","Games/apps using AI-generated assets","AI prompt packs & generation guides","AI-made fonts & design assets","AI tools, scripts & code"]},
+      ja:{h:"✅ 出品OK",items:["AIで生成したオリジナル動画・画像・音楽","AIで書いたオリジナル小説・脚本","AI生成素材を使ったゲーム・アプリ","AIプロンプト集・生成ガイド","AIで作ったフォント・デザイン素材","AI活用ツール・スクリプト・コード"]},
+      en:{h:"✅ Allowed",items:["Original AI-generated video, images, music","Original AI-written novels, scripts","Games/apps using AI-generated assets","AI prompt packs & generation guides","AI-made fonts & design assets","AI tools, scripts & code"]},
       zh:{h:"✅ 可出售",items:["AI生成的原创视频、图片、音乐","AI创作的原创小说、剧本","使用AI素材制作的游戏/应用","AI提示词集合与生成指南","AI制作的字体与设计素材","AI工具、脚本与代码"]},
       ko:{h:"✅ 판매 가능",items:["AI로 생성한 오리지널 영상·이미지·음악","AI로 작성한 소설·시나리오","AI 소재를 사용한 게임/앱","AI 프롬프트 모음 및 생성 가이드","AI로 만든 폰트·디자인 소재","AI 툴·스크립트·코드"]}
     },
@@ -1358,7 +1351,7 @@ let aTags=new Set(["all"]);
 function renderMarket(){
   const cf=document.getElementById("catF");
   // Rebuild category dropdown (handles lang change)
-  cf.innerHTML=`<option value="">${{ja:"全カテゴリ",en:"All Tools",zh:"所有分类",ko:"전체 카테고리"}[lang]||"全カテゴリ"}</option>`;
+  cf.innerHTML=`<option value="">${{ja:"全カテゴリ",en:"All Categories",zh:"所有分类",ko:"전체 카테고리"}[lang]||"全カテゴリ"}</option>`;
   CATS.forEach(c=>{const o=document.createElement("option");o.value=c.id;o.textContent=`${c.icon} ${c.name[lang]||c.name.ja}`;cf.appendChild(o);});
   renderTags();filterP();
   renderMktRecs();
@@ -1673,7 +1666,7 @@ const I18N={
     nav_home:"ホーム",nav_market:"マーケット",nav_sell:"出品する",nav_profile:"プロフィール",
     nav_cart:"カート",nav_list:"出品 ＋",
     hero_badge:"AI-POWERED MARKETPLACE",hero_h1a:"WELCOME TO",
-    hero_sub:"AIツール・スクリプト・プロンプト・自動化フローの専門マーケット。<br>あなたのAIツールを販売しよう。",
+    hero_sub:"AIツール・スクリプト・プロンプト・自動化フローの専門マーケット。<br>あなたのAIツールを今すぐ販売しよう。",
     hero_btn_market:"作品を探す",hero_btn_sell:"出品する",
     home_cats_title:"カテゴリから",home_cats_span:"探す",
     home_feat_title:"注目の",home_feat_span:"AI作品",
