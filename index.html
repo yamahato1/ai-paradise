@@ -715,7 +715,7 @@ html[lang="en"] body{font-family:"Noto Sans JP",sans-serif;}
     <div class="hero-glow"></div><div class="hero-glow2"></div>
     <div class="badge"><span class="bdot"></span><span data-i18n="hero_badge">AI-POWERED MARKETPLACE</span></div>
     <h1><span class="h1a" data-i18n="hero_h1a">WELCOME TO</span><span class="h1b">AI PARADISE</span></h1>
-    <p class="hero-sub" id="heroSub" data-i18n="hero_sub">AIで生まれた作品が集まる次世代マーケット。<br>動画・音楽・イラスト・ゲーム・ツール、あらゆるAI作品を売買しよう。</p>
+    <p class="hero-sub" id="heroSub" data-i18n="hero_sub">AIツール・スクリプト・プロンプト・自動化フローの専門マーケット。<br>あなたのAIツールを販売しよう。</p>
     <div class="hero-btns">
       <button class="btn-p" onclick="SP('market')" data-i18n="hero_btn_market">作品を探す</button>
       <button class="btn-g" onclick="SP('sell')" data-i18n="hero_btn_sell">出品する</button>
@@ -729,13 +729,13 @@ html[lang="en"] body{font-family:"Noto Sans JP",sans-serif;}
 
   <div class="wrap">
     <section class="sec">
-      <span class="stag">// BROWSE BY TYPE</span>
+      <span class="stag">// BROWSE BY CATEGORY</span>
       <div class="sh" data-i18n="home_cats_title">カテゴリから<span data-i18n="home_cats_span">探す</span></div>
       <div class="cat-grid" id="homeCats"></div>
     </section>
     <section class="sec" style="padding-top:0">
       <span class="stag">// FEATURED WORKS</span>
-      <div class="sh" data-i18n="home_feat_title">注目の<span data-i18n="home_feat_span">AI作品</span></div>
+      <div class="sh" data-i18n="home_feat_title">注目の<span data-i18n="home_feat_span">AIツール</span></div>
       <div class="pgrid" id="homeFeat"></div>
     </section>
     <!-- ══ PERSONALISED RECS ══ -->
@@ -757,7 +757,7 @@ html[lang="en"] body{font-family:"Noto Sans JP",sans-serif;}
     <section class="sec" style="padding-top:0;padding-bottom:80px;">
       <div class="sban">
         <h2>あなたの<span style="color:var(--cyan)">AI作品</span>を世界に届けよう</h2>
-        <p>AIで作ったものには価値がある。AI Paradiseで販売を始めれば、あなたの創造力が収入になります。</p>
+        <p>AIツール・プロンプト・自動化スクリプトには価値がある。AI Paradiseで販売を始めれば、あなたの技術が収入になります。</p>
         <button class="btn-p" onclick="SP('sell')">無料で出品を始める →</button>
       </div>
     </section>
@@ -769,7 +769,7 @@ html[lang="en"] body{font-family:"Noto Sans JP",sans-serif;}
   <div class="wrap">
     <section class="sec">
       <span class="stag">// MARKET</span>
-      <div class="sh" data-i18n="market_title">AI作品<span data-i18n="market_span">マーケット</span></div>
+      <div class="sh" data-i18n="market_title">AIツール<span data-i18n="market_span">マーケット</span></div>
       <div class="search-row">
         <input class="si" id="srch" type="text" placeholder="作品・クリエイターを検索..." oninput="filterP()">
         <select class="sfs" id="catF" onchange="filterP()">
@@ -1166,9 +1166,12 @@ html[lang="en"] body{font-family:"Noto Sans JP",sans-serif;}
     </div>
     <div class="fc"><h4>マーケット</h4><ul>
       <li onclick="SP('market')">新着作品</li>
-      <li onclick="goCat('illust')">イラスト</li>
-      <li onclick="goCat('music')">音楽</li>
-      <li onclick="goCat('tool')">ツール</li>
+      <li onclick="goCat('tool')">スクリプト</li>
+      <li onclick="goCat('prompt')">プロンプト</li>
+      <li onclick="goCat('code')">コード</li>
+      <li onclick="goCat('workflow')">ワークフロー</li>
+      <li onclick="goCat('bot')">AIボット</li>
+      <li onclick="goCat('auto')">自動化</li>
     </ul></div>
     <div class="fc"><h4>クリエイター</h4><ul>
       <li onclick="SP('sell')">出品する</li>
@@ -1210,23 +1213,23 @@ const CATS=[
 const COLORS=["linear-gradient(135deg,#0d0d2b,#1a0a2e,#0f3460)","linear-gradient(135deg,#1a0a0a,#2d1b2e,#1a0a2e)","linear-gradient(135deg,#0d1b2a,#1b4332,#081c15)","linear-gradient(135deg,#1a1500,#4d3d00,#1a1500)","linear-gradient(135deg,#100020,#300060,#100020)","linear-gradient(135deg,#001a1a,#004d4d,#001a1a)","linear-gradient(135deg,#001122,#003355,#005577)","linear-gradient(135deg,#1a0010,#4d0030,#1a0010)"];
 const EMOJIS=["🎬","🎵","🖼️","🎨","🎮","🌸","📚","🔧","🌌","🎹","🤖","🌃","🐉","✨","🌙","🎭"];
 const SAMPLES=[
-  {id:1,title:"Cosmic Journey 4K",cat:"video",emoji:"🌌",price:3800,desc:"Sora生成・宇宙空間を漂う120秒アンビエント映像。BGV・配信素材に最適。",author:"@cosmos_ai",ai:"Sora",likes:42,bg:"linear-gradient(135deg,#0d0d2b,#1a0a2e,#0f3460)"},
-  {id:2,title:"Lo-Fi Tokyo Nights",cat:"music",emoji:"🎵",price:5200,desc:"Udio生成・夜の東京テーマlo-fi hiphopトラック集。商用利用可能。",author:"@lofi_genai",ai:"Udio",likes:78,bg:"linear-gradient(135deg,#1a0a0a,#2d1b2e,#1a0a2e)"},
-  {id:3,title:"Fantasy Character Pack",cat:"illust",emoji:"🎨",price:9800,desc:"Midjourney生成・ファンタジーキャラクター50体。ゲーム・TRPG素材に。",author:"@artgen_jp",ai:"Midjourney",likes:134,bg:"linear-gradient(135deg,#0d1b2a,#1b4332,#081c15)"},
-  {id:4,title:"Dungeon Puzzle: AI Ed.",cat:"game",emoji:"🎮",price:1200,desc:"AI生成グラフィック完全採用のブラウザパズルゲーム。",author:"@indiegame_ai",ai:"DALL-E",likes:56,bg:"linear-gradient(135deg,#2d1b69,#11047a,#3d0c02)"},
-  {id:5,title:"銀河の果て、君と",cat:"novel",emoji:"📚",price:680,desc:"Claude生成・SF恋愛短編小説 全5章。",author:"@novel_forge",ai:"Claude",likes:29,bg:"linear-gradient(135deg,#1a0533,#4a0080,#1a0533)"},
-  {id:6,title:"AI議事録Generator v2",cat:"tool",emoji:"🔧",price:0,desc:"会議録音をアップするだけで構造化議事録を自動生成。Pythonスクリプト。",author:"@toolsmith_ai",ai:"Whisper+GPT",likes:91,bg:"linear-gradient(135deg,#001122,#003355,#005577)"},
-  {id:7,title:"Future City Skyline Pack",cat:"photo",emoji:"🌃",price:4500,desc:"Stable Diffusion生成・未来都市夜景写真素材20枚。4K解像度。",author:"@cityvision",ai:"SD",likes:67,bg:"linear-gradient(135deg,#0a0a1a,#1a1a3e,#0a1a2e)"},
-  {id:8,title:"Yokai Animated Stickers",cat:"anime",emoji:"👹",price:2200,desc:"RunwayML生成・日本妖怪アニメーションスタンプ12種。",author:"@yokai_studio",ai:"RunwayML",likes:83,bg:"linear-gradient(135deg,#1a0010,#3d0030,#0d0015)"},
-  {id:9,title:"AI Narrator Voice Pack",cat:"voice",emoji:"🎙️",price:6800,desc:"ElevenLabs生成・プロナレーター風AI音声素材50本。商用利用可。",author:"@voicegen_ai",ai:"ElevenLabs",likes:112,bg:"linear-gradient(135deg,#0a0020,#1a0050,#0a002a)"},
-  {id:10,title:"Virtual Influencer Avatar",cat:"avatar",emoji:"🤖",price:14800,desc:"HeyGen生成・リアルなAIアバター動画素材。顔・声・動作すべてAI。",author:"@avatar_lab",ai:"HeyGen",likes:94,bg:"linear-gradient(135deg,#001828,#003856,#001828)"},
-  {id:11,title:"Web App Starter Kit",cat:"code",emoji:"💻",price:4200,desc:"GitHub Copilot生成・React+TypeScript完全動作Webアプリテンプレート。",author:"@codegen_pro",ai:"Copilot",likes:67,bg:"linear-gradient(135deg,#001a0a,#00401a,#001a0a)"},
-  {id:12,title:"Brand Identity Pack",cat:"design",emoji:"✏️",price:7800,desc:"AI生成・ロゴ・カラーパレット・フォント・名刺デザイン一式。",author:"@design_ai",ai:"Midjourney+GPT",likes:88,bg:"linear-gradient(135deg,#1a1000,#3a2800,#1a1000)"},
-  {id:13,title:"SEOブログ記事テンプレ30本",cat:"writing",emoji:"📝",price:3200,desc:"Claude生成・SEO最適化済みブログ記事テンプレート。各種業種対応。",author:"@writer_ai",ai:"Claude",likes:55,bg:"linear-gradient(135deg,#0a0a20,#20204a,#0a0a20)"},
-  {id:14,title:"Abstract Art Collection",cat:"art",emoji:"🖌️",price:8900,desc:"Stable Diffusion生成・抽象アート作品集30点。プリント・展示用高解像度。",author:"@art_genesis",ai:"SD",likes:143,bg:"linear-gradient(135deg,#200020,#500050,#200020)"},
-  {id:15,title:"ChatGPT完全攻略ロードマップ",cat:"edu",emoji:"🎓",price:2980,desc:"Claude生成・初心者〜上級者向けChatGPT完全学習ロードマップ。動画スクリプト＋演習問題付き。",author:"@ai_teacher",ai:"Claude",likes:176,bg:"linear-gradient(135deg,#0a1500,#1a3300,#0a1500)"},
-  {id:16,title:"Midjourney プロンプト教室",cat:"edu",emoji:"📖",price:4800,desc:"Midjourney v6対応・プロンプトエンジニアリング講座テキスト。実例100本収録。",author:"@prompt_sensei",ai:"Claude+MJ",likes:122,bg:"linear-gradient(135deg,#0a1500,#243b00,#0a1500)"},
-  {id:17,title:"AI副業スタートガイド2025",cat:"edu",emoji:"💡",price:1980,desc:"AI×副業の始め方。ジャンル別収益化戦略・ツール比較・実績事例まとめ。",author:"@ai_income",ai:"Claude",likes:89,bg:"linear-gradient(135deg,#152000,#2a4000,#152000)"},
+  {id:1, title:"AI議事録Generator v2",    cat:"tool",     emoji:"🔧",price:0,     desc:"会議録音をアップするだけで構造化議事録を自動生成。Pythonスクリプト。",          author:"@toolsmith_ai",  ai:"Whisper+GPT",   likes:91, bg:"linear-gradient(135deg,#001122,#003355,#005577)"},
+  {id:2, title:"ChatGPT プロンプト集 Pro", cat:"prompt",   emoji:"✨",price:1980,  desc:"GPT-4o対応・業種別プロンプト500本。コピペで即使える実践プロンプト集。",        author:"@prompt_master", ai:"GPT-4o",         likes:143,bg:"linear-gradient(135deg,#0a0020,#2a0060,#0a0020)"},
+  {id:3, title:"Web App Starter Kit",      cat:"code",     emoji:"💻",price:4200,  desc:"GitHub Copilot生成・React+TypeScript完全動作Webアプリテンプレート。",           author:"@codegen_pro",   ai:"Copilot",        likes:67, bg:"linear-gradient(135deg,#001a0a,#00401a,#001a0a)"},
+  {id:4, title:"n8n 自動化ワークフロー集", cat:"workflow",  emoji:"⚡",price:3800,  desc:"n8n対応・SNS投稿・メール返信・請求書作成など業務自動化ワークフロー20本。",      author:"@n8n_wizard",    ai:"GPT-4o",         likes:88, bg:"linear-gradient(135deg,#1a1000,#4d3000,#1a1000)"},
+  {id:5, title:"AI カスタマーサポートBot", cat:"bot",       emoji:"🤖",price:9800,  desc:"Voiceflow構築・FAQ対応・注文確認・クレーム一次対応まで自動化するチャットボット。",author:"@bot_factory",   ai:"Claude+GPT",     likes:112,bg:"linear-gradient(135deg,#001828,#004060,#001828)"},
+  {id:6, title:"SNS投稿テンプレ100本",     cat:"template",  emoji:"📋",price:1500,  desc:"X・Instagram・LinkedIn対応。業種別SNS投稿テンプレート100本。Claude生成。",      author:"@social_ai",     ai:"Claude",         likes:76, bg:"linear-gradient(135deg,#0a0a20,#202060,#0a0a20)"},
+  {id:7, title:"Zapier × OpenAI 連携Kit", cat:"api",       emoji:"🔌",price:5800,  desc:"Zapierで使えるOpenAI API連携テンプレート。メール要約・翻訳・分類を自動化。",   author:"@zap_master",    ai:"GPT-4o",         likes:54, bg:"linear-gradient(135deg,#1a0010,#4d0030,#1a0010)"},
+  {id:8, title:"Midjourney 呪文ジェネレーター",cat:"prompt",emoji:"✨",price:2800,  desc:"テーマ・スタイル・雰囲気を入力するだけで最適Midjourneyプロンプトを生成するPythonツール。",author:"@mj_prompter",ai:"GPT-4o",    likes:189,bg:"linear-gradient(135deg,#200020,#500050,#200020)"},
+  {id:9, title:"Python データ分析スクリプト集",cat:"code",  emoji:"💻",price:3200,  desc:"pandas・matplotlib・seaborn使用・CSV/Excel読み込みから可視化まで30本収録。",   author:"@data_wizard",   ai:"Copilot+GPT",    likes:98, bg:"linear-gradient(135deg,#001a0a,#003322,#001a0a)"},
+  {id:10,title:"Make.com 業務自動化フロー", cat:"workflow", emoji:"⚡",price:4800,  desc:"Make.com（旧Integromat）シナリオファイル。Google Sheets→Notion→Slack連携。",   author:"@make_pro",      ai:"GPT-4o",         likes:61, bg:"linear-gradient(135deg,#1a1a00,#3a3000,#1a1a00)"},
+  {id:11,title:"AI営業メールテンプレ50本",  cat:"template", emoji:"📋",price:1980,  desc:"業種・フェーズ別営業メールテンプレート50本。返信率アップのA/Bパターン付き。",   author:"@sales_ai",      ai:"Claude",         likes:83, bg:"linear-gradient(135deg,#0a0a20,#1a1a50,#0a0a20)"},
+  {id:12,title:"LINE Bot 構築テンプレ",    cat:"bot",       emoji:"🤖",price:6800,  desc:"LINE Messaging API + GPT連携。FAQ・予約・注文確認ボット即日構築可能なテンプレ。",author:"@line_builder",  ai:"GPT-4o",         likes:127,bg:"linear-gradient(135deg,#001828,#003060,#001828)"},
+  {id:13,title:"Claude API 活用スクリプト",cat:"api",       emoji:"🔌",price:3500,  desc:"Claude APIを使った文書要約・翻訳・分類・構造化抽出スクリプト集（Python）。",   author:"@claude_dev",    ai:"Claude",         likes:71, bg:"linear-gradient(135deg,#1a0010,#3d0025,#1a0010)"},
+  {id:14,title:"完全自動ブログ投稿ツール",  cat:"auto",     emoji:"🚀",price:7800,  desc:"キーワード入力→記事生成→WordPress自動投稿まで全自動。n8n+GPT+WP REST API。",  author:"@blog_robot",    ai:"GPT-4o",         likes:156,bg:"linear-gradient(135deg,#0d0d2b,#1a0a2e,#0f3460)"},
+  {id:15,title:"AI画像生成プロンプト辞典",  cat:"prompt",   emoji:"✨",price:2480,  desc:"DALL-E・SD・Midjourney対応。スタイル別・ジャンル別プロンプト辞典1000エントリ。",author:"@img_prompter",  ai:"GPT-4o",         likes:201,bg:"linear-gradient(135deg,#0a0020,#1a0050,#0a0020)"},
+  {id:16,title:"TypeScript型定義 自動生成", cat:"code",     emoji:"💻",price:2800,  desc:"JSON/APIレスポンスからTypeScript型定義を自動生成するNode.jsスクリプト。",     author:"@ts_wizard",     ai:"Copilot",        likes:44, bg:"linear-gradient(135deg,#001a0a,#002a10,#001a0a)"},
+  {id:17,title:"月次レポート自動化ツール",  cat:"auto",     emoji:"🚀",price:5200,  desc:"Google Analytics + Sheets + Slides連携。月次レポートをワンクリック自動生成。", author:"@report_auto",   ai:"GPT-4o",         likes:93, bg:"linear-gradient(135deg,#0d0d2b,#2a1a4e,#0d0d2b)"},
 ];
 
 // ── STATE ──
@@ -1324,8 +1327,8 @@ function renderHome(){
   document.getElementById("stepsEl").innerHTML=[0,1,2,3].map(i=>`<div class="step"><div class="stn">0${i+1}</div><div class="stt">${T[i][lang]||T[i].ja}</div><div class="std">${D[i][lang]||D[i].ja}</div></div>`).join("");
   const RULES={
     ok:{
-      ja:{h:"✅ 出品OK",items:["AIで生成したオリジナル動画・画像・音楽","AIで書いたオリジナル小説・脚本","AI生成素材を使ったゲーム・アプリ","AIプロンプト集・生成ガイド","AIで作ったフォント・デザイン素材","AI活用ツール・スクリプト・コード"]},
-      en:{h:"✅ Allowed",items:["Original AI-generated video, images, music","Original AI-written novels, scripts","Games/apps using AI-generated assets","AI prompt packs & generation guides","AI-made fonts & design assets","AI tools, scripts & code"]},
+      ja:{h:"✅ 出品OK",items:["AIで作成したスクリプト・ツール・プロンプト","AIで書いたオリジナル小説・脚本","AI生成素材を使ったゲーム・アプリ","AIプロンプト集・生成ガイド","AIで作ったフォント・デザイン素材","AI活用ツール・スクリプト・コード"]},
+      en:{h:"✅ Allowed",items:["AI-created scripts, tools, prompts","Original AI-written novels, scripts","Games/apps using AI-generated assets","AI prompt packs & generation guides","AI-made fonts & design assets","AI tools, scripts & code"]},
       zh:{h:"✅ 可出售",items:["AI生成的原创视频、图片、音乐","AI创作的原创小说、剧本","使用AI素材制作的游戏/应用","AI提示词集合与生成指南","AI制作的字体与设计素材","AI工具、脚本与代码"]},
       ko:{h:"✅ 판매 가능",items:["AI로 생성한 오리지널 영상·이미지·음악","AI로 작성한 소설·시나리오","AI 소재를 사용한 게임/앱","AI 프롬프트 모음 및 생성 가이드","AI로 만든 폰트·디자인 소재","AI 툴·스크립트·코드"]}
     },
@@ -1355,7 +1358,7 @@ let aTags=new Set(["all"]);
 function renderMarket(){
   const cf=document.getElementById("catF");
   // Rebuild category dropdown (handles lang change)
-  cf.innerHTML=`<option value="">${{ja:"全カテゴリ",en:"All Categories",zh:"所有分类",ko:"전체 카테고리"}[lang]||"全カテゴリ"}</option>`;
+  cf.innerHTML=`<option value="">${{ja:"全カテゴリ",en:"All Tools",zh:"所有分类",ko:"전체 카테고리"}[lang]||"全カテゴリ"}</option>`;
   CATS.forEach(c=>{const o=document.createElement("option");o.value=c.id;o.textContent=`${c.icon} ${c.name[lang]||c.name.ja}`;cf.appendChild(o);});
   renderTags();filterP();
   renderMktRecs();
@@ -1670,7 +1673,7 @@ const I18N={
     nav_home:"ホーム",nav_market:"マーケット",nav_sell:"出品する",nav_profile:"プロフィール",
     nav_cart:"カート",nav_list:"出品 ＋",
     hero_badge:"AI-POWERED MARKETPLACE",hero_h1a:"WELCOME TO",
-    hero_sub:"AIで生まれた作品が集まる次世代マーケット。<br>動画・音楽・イラスト・ゲーム・ツール、あらゆるAI作品を売買しよう。",
+    hero_sub:"AIツール・スクリプト・プロンプト・自動化フローの専門マーケット。<br>あなたのAIツールを販売しよう。",
     hero_btn_market:"作品を探す",hero_btn_sell:"出品する",
     home_cats_title:"カテゴリから",home_cats_span:"探す",
     home_feat_title:"注目の",home_feat_span:"AI作品",
@@ -1682,7 +1685,7 @@ const I18N={
     nav_home:"Home",nav_market:"Market",nav_sell:"Sell",nav_profile:"Profile",
     nav_cart:"Cart",nav_list:"List ＋",
     hero_badge:"AI-POWERED MARKETPLACE",hero_h1a:"WELCOME TO",
-    hero_sub:"The next-gen market for AI-generated works.<br>Videos, music, art, games, tools — buy and sell anything AI.",
+    hero_sub:"The AI Tools Marketplace. Scripts, prompts, workflows, bots — buy and sell AI tools.",
     hero_btn_market:"Browse Works",hero_btn_sell:"Start Selling",
     home_cats_title:"Browse by",home_cats_span:"Category",
     home_feat_title:"Featured",home_feat_span:"AI Works",
